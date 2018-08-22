@@ -1,14 +1,45 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      WEATHER
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="home">
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50 offset-25>
+          <ion-item no-lines>
+              <ion-input class="location" type='text'placeholder="Search City" [(ngModel)]='city'></ion-input>
+            </ion-item>
+              <button ion-button icon-only (click)='getWeather()'><ion-icon name='search'></ion-icon></button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list no-lines>
+          <ion-item>
+            <strong>Main Weather: </strong>{{main}}
+          </ion-item>
+          <ion-item>
+              <strong>Temperature: </strong>{{temp}}
+          </ion-item>
+          <ion-item>
+              <strong> Humidity: </strong> {{humidity}}
+          </ion-item>
+          <ion-item>
+              <strong> Wind Speed: </strong> {{windspeed}}
+          </ion-item>
+          <ion-item>
+              <strong> Description: </strong>{{description}}
+          </ion-item>
+          <ion-item>
+              <strong> Date: </strong> {{date * 1000| date}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
 </ion-content>
